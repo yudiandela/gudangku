@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Anggota;
 use Illuminate\Http\Request;
 
 class FourierController extends Controller
@@ -13,7 +14,8 @@ class FourierController extends Controller
      */
     public function index()
     {
-        return view('fourier.index');
+        $anggotas = Anggota::all();
+        return view('fourier.index', compact('anggotas'));
     }
 
     /**
