@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Anggota;
+use App\Senjata;
 use Illuminate\Http\Request;
 
 class FourierController extends Controller
@@ -25,7 +26,7 @@ class FourierController extends Controller
      */
     public function create()
     {
-        //
+        return view('fourier.create');
     }
 
     /**
@@ -36,7 +37,27 @@ class FourierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'      => 'required|unique:anggotas|max:255',
+            'pangkat'   => 'required|max:255',
+            'nrp'       => 'required|unique:anggotas|numeric',
+            'type'      => 'required|max:255',
+            'nosenjata' => 'required|unique:senjatas,nosenjata'
+        ]);
+
+        $anggota = new Anggota;
+        $anggota->name    = $request->name;
+        $anggota->pangkat = $request->pangkat;
+        $anggota->nrp     = $request->nrp;
+        $anggota->save();
+
+        $senjata = new Senjata;
+        $senjata->anggota_id = $anggota->id;
+        $senjata->type       = $request->type;
+        $senjata->nosenjata  = $request->nosenjata;
+        $senjata->save();
+
+        return redirect()->route('fourier.index')->with('success', 'Berhasil menambahkan data anggota');
     }
 
     /**
