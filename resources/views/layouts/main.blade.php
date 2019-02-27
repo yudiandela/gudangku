@@ -13,6 +13,32 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">GUDJAT KIBAN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li> --}}
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Fourier <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-power-off"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         @yield('content')
     </div>
@@ -27,6 +53,7 @@
 
     <script src="{{ asset('vendor/jquery/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('vendor/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
     @stack('script')
 
