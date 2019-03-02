@@ -58,7 +58,7 @@ class FourierController extends Controller
         $senjata->nosenjata  = $request->nosenjata;
         $senjata->save();
 
-        return redirect()->route('fourier.index')->with('success', 'Berhasil menambahkan data anggota');
+        return redirect()->route('fourier.index')->with('success', 'Menambahkan data anggota');
     }
 
     /**
@@ -110,7 +110,7 @@ class FourierController extends Controller
         $anggota->senjata->save();
         $anggota->save();
 
-        return redirect()->route('fourier.index')->with('success', 'Berhasil mengubah data anggota');
+        return redirect()->route('fourier.index')->with('success', 'Mengubah data anggota');
     }
 
     /**
