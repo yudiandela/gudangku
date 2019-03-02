@@ -81,7 +81,8 @@ class FourierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anggota = Anggota::find($id);
+        return view('fourier.formEdit', compact('anggota'));
     }
 
     /**
@@ -93,7 +94,23 @@ class FourierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $anggota = Anggota::find($id);
+
+        $request->validate([
+            'name'      => 'required|max:255|unique:anggotas,name,'.$anggota->id,
+            'pangkat'   => 'required|max:255',
+            'nrp'       => 'required|numeric|unique:anggotas,nrp,'.$anggota->id,
+            'type'      => 'required|max:255',
+            'nosenjata' => 'required|unique:senjatas,nosenjata,'.$anggota->id
+        ]);
+
+        $anggota = Anggota::findOrFail($id);
+        $anggota->name               = $request->name;
+        $anggota->senjata->nosenjata = $request->nosenjata;
+        $anggota->senjata->save();
+        $anggota->save();
+
+        return redirect()->route('fourier.index')->with('success', 'Berhasil mengubah data anggota');
     }
 
     /**

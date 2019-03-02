@@ -50,7 +50,7 @@
 @if (session('success'))
     @push('script')
         <script>
-            swal("Berhasil" ,  "Menambahkan data anggota" ,  "success" );
+            swal("Berhasil" ,  "{{ session('success') }}" ,  "success" );
         </script>
     @endpush
 @endif
