@@ -27,7 +27,7 @@ class FourierController extends Controller
      */
     public function create()
     {
-        return view('fourier.create');
+        return view('fourier.formCreate');
     }
 
     /**
