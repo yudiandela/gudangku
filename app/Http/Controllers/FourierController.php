@@ -69,7 +69,8 @@ class FourierController extends Controller
      */
     public function show($id)
     {
-        //
+        $anggota = Anggota::find($id);
+        return view('fourier.showDetail', compact('anggota'));
     }
 
     /**
