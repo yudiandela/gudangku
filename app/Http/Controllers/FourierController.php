@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class FourierController extends Controller
 {
+    private $paginate = 10;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,7 @@ class FourierController extends Controller
      */
     public function index()
     {
-        $anggotas = Anggota::all();
+        $anggotas = Anggota::paginate($this->paginate);
         return view('fourier.index', compact('anggotas'));
     }
 

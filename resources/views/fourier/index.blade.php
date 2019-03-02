@@ -43,6 +43,8 @@
             </table>
         </div>
     </div>
+
+    {{ $anggotas->links() }}
 @endsection
 
 @if (session('success'))
