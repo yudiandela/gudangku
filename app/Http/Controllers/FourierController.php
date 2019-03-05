@@ -22,7 +22,8 @@ class FourierController extends Controller
      */
     public function index()
     {
-        $anggotas = Anggota::paginate($this->paginate);
+        // $anggotas = Anggota::paginate($this->paginate);
+        $anggotas = Anggota::all();
         return view('fourier.index', compact('anggotas'));
     }
 
