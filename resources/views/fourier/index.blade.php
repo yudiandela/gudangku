@@ -25,20 +25,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($anggotas as $anggota)
+                    @if ($anggotas->count() > 0)
+                        @foreach ($anggotas as $anggota)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $anggota->name }}</td>
+                            <td>{{ $anggota->pangkat }}</td>
+                            <td>{{ $anggota->nrp }}</td>
+                            <td>{{ $anggota->senjata->nosenjata }}</td>
+                            <td class="text-center">
+                                <a href="{{ route('fourier.edit', $anggota->id) }}" class="px-1 text-dark"><i class="fa fa-edit"></i></a> |
+                                <a href="{{ route('fourier.show', $anggota->id) }}" class="px-1 text-primary"><i class="fa fa-eye"></i></a> |
+                                <a href="{{ route('fourier.destroy', $anggota->id) }}" class="px-1 text-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    @else
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $anggota->name }}</td>
-                        <td>{{ $anggota->pangkat }}</td>
-                        <td>{{ $anggota->nrp }}</td>
-                        <td>{{ $anggota->senjata->nosenjata }}</td>
-                        <td class="text-center">
-                            <a href="{{ route('fourier.edit', $anggota->id) }}" class="px-1 text-dark"><i class="fa fa-edit"></i></a> |
-                            <a href="{{ route('fourier.show', $anggota->id) }}" class="px-1 text-primary"><i class="fa fa-eye"></i></a> |
-                            <a href="{{ route('fourier.destroy', $anggota->id) }}" class="px-1 text-danger"><i class="fa fa-trash"></i></a>
-                        </td>
+                        <td colspan="6" class="text-center">No data this here</td>
                     </tr>
-                    @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
