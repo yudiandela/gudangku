@@ -112,6 +112,9 @@ class FourierController extends Controller
 
         $anggota = Anggota::findOrFail($id);
         $anggota->name               = $request->name;
+        $anggota->pangkat            = $request->pangkat;
+        $anggota->nrp                = $request->nrp;
+        $anggota->senjata->type      = $request->type;
         $anggota->senjata->nosenjata = $request->nosenjata;
         $anggota->senjata->save();
         $anggota->save();
