@@ -34,9 +34,9 @@
                             <td>{{ $anggota->nrp }}</td>
                             <td>{{ $anggota->senjata->nosenjata }}</td>
                             <td class="text-center">
-                                <a href="{{ route('fourier.edit', $anggota->id) }}" class="px-1 text-dark"><i class="fa fa-edit"></i></a> |
-                                <a href="{{ route('fourier.show', $anggota->id) }}" class="px-1 text-primary"><i class="fa fa-eye"></i></a> |
-                                <a href="{{ route('fourier.destroy', $anggota->id) }}" class="px-1 text-danger"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('fourier.show', $anggota->id) }}" data-toggle="tooltip" title="Show detail" class="px-1 text-primary"><i class="fa fa-eye"></i></a> |
+                                <a href="{{ route('fourier.edit', $anggota->id) }}" data-toggle="tooltip" title="Edit" class="px-1 text-dark"><i class="fa fa-edit"></i></a> |
+                                <a href="{{ route('fourier.destroy', $anggota->id) }}" data-toggle="tooltip" title="Delete" class="px-1 text-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach
