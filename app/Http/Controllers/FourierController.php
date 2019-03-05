@@ -8,7 +8,13 @@ use Illuminate\Http\Request;
 
 class FourierController extends Controller
 {
+    /**
+     * Show data per page
+     *
+     * @var integer
+     */
     private $paginate = 10;
+
     /**
      * Display a listing of the resource.
      *
