@@ -121,6 +121,9 @@ class FourierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anggota = Anggota::findorFail($id);
+        $anggota->delete();
+
+        return redirect()->route('fourier.index')->with('success', 'Menghapus data anggota');
     }
 }
