@@ -12,4 +12,10 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('index');
-Route::resource('fourier', 'FourierController');
+
+Auth::routes(['register' => false]);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('fourier', 'FourierController');
+    Route::get('/home', 'HomeController@index')->name('home');
+});
