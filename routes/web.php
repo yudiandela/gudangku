@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@index')->name('index');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => 'false']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('fourier', 'FourierController');

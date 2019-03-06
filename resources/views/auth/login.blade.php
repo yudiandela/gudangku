@@ -66,7 +66,7 @@
 
                                     <div class="text-center">
                                         @if (Route::has('register'))
-                                            <a class="small" href="{{ route('password.request') }}">
+                                            <a class="small" href="{{ route('register') }}">
                                                 {{ __('Create an Account!') }}
                                             </a>
                                         @endif

@@ -85,13 +85,13 @@
                         <div class="row">
                             <div class="col-lg-1"></div>
                             <div class="col">
-                                <a href="{{ route('fourier.index') }}" class="btn btn-block btn-danger">{{ __('Cancel') }}</a>
+                                <a href="{{ route('fourier.index') }}" class="btn btn-block btn-user btn-danger">{{ __('Cancel') }}</a>
                             </div>
                             <div class="col">
-                                <button type="reset" class="btn btn-block btn-warning">{{ __('Clear Data') }}</button>
+                                <button type="reset" class="btn btn-block btn-user btn-warning">{{ __('Clear Data') }}</button>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn btn-block btn-primary">{{ __('Submit Data') }}</button>
+                                <button type="submit" class="btn btn-block btn-user btn-primary">{{ __('Submit Data') }}</button>
                             </div>
                             <div class="col-lg-1"></div>
                         </div>

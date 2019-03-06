@@ -85,10 +85,10 @@
                         <div class="row">
                             <div class="col-lg-1"></div>
                             <div class="col">
-                                <a href="{{ route('fourier.index') }}" class="btn btn-block btn-danger">{{ __('Cancel') }}</a>
+                                <a href="{{ route('fourier.index') }}" class="btn btn-block btn-user btn-danger">{{ __('Cancel') }}</a>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn btn-block btn-primary">{{ __('Update Data') }}</button>
+                                <button type="submit" class="btn btn-block btn-user btn-primary">{{ __('Update Data') }}</button>
                             </div>
                             <div class="col-lg-1"></div>
                         </div>
